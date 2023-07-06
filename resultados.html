@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados da Busca</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div><img src="images/image.webp" alt="Logo"></div>
+    <div><a href="/login" class="botao">Entrar</a>  
+    <a href="/post" class="botao">Post</a></div>
+  </header>
+
+  <div id="main-resultados">
+    <h1>Resultados da Busca</h1>
+
+    <div id="posts">
+      <!-- Aqui serão inseridos os resultados da busca -->
+    </div>
+  </div>
+
+  <script src="busca.js"></script>
+  <script>
+    // Código JavaScript para carregar e exibir os resultados da busca
+    window.addEventListener('DOMContentLoaded', function() {
+      // Obtém o texto de busca da URL
+      var urlParams = new URLSearchParams(window.location.search);
+      var textoBusca = urlParams.get('search');
+
+      // Filtra os posts de acordo com o texto de busca
+      var resultados = posts.filter(function(post) {
+        return post.titulo.toLowerCase().includes(textoBusca) || post.conteudo.toLowerCase().includes(textoBusca);
+      });
+
+      // Exibe os resultados na página
+      var container = document.getElementById('posts');
+
+      if (resultados.length > 0) {
+        resultados.forEach(function(post) {
+          var divPost = document.createElement('div');
+          divPost.className = 'post';
+          
+          var titulo = document.createElement('h2');
+          titulo.innerText = post.titulo;
+
+          var data = document.createElement('p');
+          data.innerText = post.data;
+
+          var imagem = document.createElement('img');
+          imagem.src = post.imagem;
+          imagem.alt = 'Imagem';
+
+          var conteudo = document.createElement('p');
+          conteudo.innerText = post.conteudo;
+
+          divPost.appendChild(titulo);
+          divPost.appendChild(data);
+          divPost.appendChild(imagem);
+          divPost.appendChild(conteudo);
+
+          container.appendChild(divPost);
+        });
+      } else {
+        var mensagem = document.createElement('p');
+        mensagem.innerText = 'Nenhum resultado encontrado.';
+        container.appendChild(mensagem);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zé Delivery: Entrega de bebidas geladas a preço baixo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="images/image.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div>
+      <img src="images/image.webp" alt="Logo" />
+    </div>
+    <div>
+      <a href="/login" class="botao">Entrar</a>
+      <a href="/post" class="botao">Post</a>
+    </div>
+  </header>
+
+  <div id="main-inicio">
+    <h1 class="frase">
+      <span class="frase-inicio">Bebida rápida, gelada e no precinho?</span> O Zé entrega tudo.
+    </h1>
+
+    <!-- <form> -->
+      <div class="search">
+        <input class="form" type="text" id="search-input" placeholder="Inserir endereço para ver preço" />
+        <a href="resultados.html" class="botao">Buscar</a>
+      </div>
+      <!-- <input class="form" type="text" name="search" placeholder="Inserir endereço para ver preço" oninput="buscarPostagens(this.value)" /> -->
+    <!-- </form> -->
+  </div>
+
+  <div id="main-meio">
+    <div class="blog">
+      <h2>Posts</h2>
+      <button onclick="openDialog()">Nova Postagem</button>
+      <div id="dialog" style="display: none;">
+        <input type="text" id="titulo" placeholder="Título">
+        <input type="date" id="data">
+        <input type="file" id="imagem" accept="image/jpeg, image/png">
+        <textarea id="conteudo" placeholder="Conteúdo"></textarea>
+        <button onclick="salvarPostagem()">Salvar</button>
+      </div>
+    </div>
+
+    <table id="posts">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Data</th>
+          <th>Imagem</th>
+          <th>Conteúdo</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Aqui serão inseridas as postagens -->
+      </tbody>
+    </table>
+  </div>
+
+  <div id="resultado-busca" style="display: none;">
+    <h3>Resultado da busca</h3>
+    <table id="posts-busca">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Data</th>
+          <th>Imagem</th>
+          <th>Conteúdo</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Aqui serão inseridos os resultados da busca -->
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <div id="main-meio">
+    <h2>Produtos que você encontra no Zé Delivery</h2>
+
+    <ul>
+      <li class="item-lista">
+        <img src="images/imagem-energetico.webp" alt="Energético" />
+        <h3>Energéticos</h3>
+      </li>
+      <li class="item-lista">
+        <img src="images/imagem-suco.webp" alt="Suco" />
+        <h3>Sucos</h3>
+      </li>
+      <li class="item-lista">
+        <img src="images/imagem-gelo.webp" alt="Gelo" />
+        <h3>Gelos</h3>
+      </li>
+      <li class="item-lista">
+        <img src="images/imagem-amendoim.webp" alt="Amendoim" />
+        <h3>Amendoins</h3>
+      </li>
+    </ul>
+  </div>
+
+  <div class="main-baixo">
+    <div class="coluna">
+      <ul>
+        <li>
+          <img class="icons" src="images/icon-cerveja.webp" alt="" />
+          <h3>Cervejas</h3>
+        </li>
+        <li class="linha-produtos">
+          <img class="icons" src="images/icon-destilados.webp" alt="" />
+          <h3>Destilados</h3>
+        </li>
+        <li class="linha-produtos">
+          <img class="icons" src="images/icon-vinhos.webp" alt="" />
+          <h3>Vinhos</h3>
+        </li>
+      </ul>
+    </div>
+
+    <div class="coluna">
+      <ul>
+        <li>
+          <img class="icons" src="images/icon-nao-alcoolicos.webp" alt="" />
+          <h3>Não Alcoólicos</h3>
+        </li>
+        <li class="linha-produtos">
+          <img class="icons" src="images/icon-loja.webp" alt="" />
+          <h3>Loja</h3>
+        </li>
+        <li class="linha-produtos">
+          <img class="icons" src="images/icon-comidinhas.webp" alt="" />
+          <h3>Comidinhas</h3>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Como funciona o Zé Delivery?</h2>
+
+  <div class="main-funcionalidades">
+
+    <ul>
+      <li>
+        <img src="images/icon-moto.webp" alt="Motoqueiro" />
+        <h3>Onde você estiver</h3>
+        <p>Achamos as bebidas geladinhas na sua área e levamos até você!</p>
+      </li>
+
+      <li>
+        <img src="images/icon-sacola.webp" alt="Sacola" />
+        <h3>Só as favoritas</h3>
+        <p>
+          Você pode escolher entre cervejas, vinhos, água, energéticos,
+          refrigerantes, salgadinhos e até gelo!
+        </p>
+      </li>
+
+      <li>
+        <img src="images/icon-brinde.webp" alt="Brinde" />
+        <h3>Facilita seu brinde</h3>
+        <p>
+          Suas bebidas chegam geladinhas e super rápidas, prontas para
+          brindar!
+        </p>
+      </li>
+    </ul>
+  </div>
+<script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,281 @@
+table {
+  /* display: flex; */
+  width: 90%;
+  max-width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #F15A24;
+  color: #FFFFFF;
+}
+
+td {
+  background-color: #F8F8F8;
+}
+
+tr:nth-child(even) td {
+  background-color: #FFFFFF;
+}
+
+tr:hover td {
+  background-color: #FFE8D9;
+}
+
+.post-image {
+  max-width: 200px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 30px;
+  background-color: #1A1A1A;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 0 0 10px 10px;
+  align-items: center;
+}
+
+.blog{
+  /* display: grid; */
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  width: 95%;
+  text-align: center;
+  
+}
+
+/* .dialog{
+  background-color: #F15A24;
+  color: #FFFFFF;
+  width: 90%;
+  max-width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+} */
+
+.dialog {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.dialog-input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.dialog-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.dialog-button:hover {
+  background-color: #45a049;
+}
+
+button{
+  background-color: #FFCC00;
+  color: #ffffff;
+  border-radius: 10px;
+  border: 0;
+  padding: 20px;
+
+}
+#botao {
+  background-color: #FFCC00;
+  border-radius: 100px;
+  width: 150px;
+  height: 50px;
+  border: none;
+  padding: 20px;
+}
+
+#main-inicio {
+  background-color: #FFCC00;
+  padding: 100px;
+  text-align: center;
+  /* alinhar os elementos filhos ao centro */
+}
+
+.frase {
+  color: #333333;
+  font-weight: normal;
+  font-size: 35px;
+  flex-basis: 50%;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+h1,
+input {
+  display: inline-block;
+  /* definir os elementos filhos como inline-block */
+}
+
+#icone-mapa {
+  position: relative;
+  width: 2.5%;
+  left: 50px;
+  top: 9.5px;
+}
+
+span {
+  font-weight: bold;
+}
+
+.form {
+  padding: 12px 20px 12px 30px;
+  border: none;
+  border-radius: 8px;
+  width: 500px;
+  height: 20px;
+  margin: 10px 0px 100px 0px;
+  border: 1px solid #9B9A98;
+}
+
+::placeholder {
+  position: relative;
+  left: 20px;
+  margin: 10px;
+  font-size: .9rem;
+  color: #9999B3;
+}
+
+#main-meio {
+  padding-top: 65px;
+}
+
+#main-meio img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+#main-meio ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.item-lista {
+  border: 1px solid #E1E1E1;
+  border-radius: 10px;
+  justify-content: space-around;
+  margin: 10px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+li img {
+  display: inline-block;
+  border-bottom: 2px solid #F3F3F3;
+  padding: 14px;
+}
+
+li h3 {
+  font-weight: normal;
+  color: #333333;
+  padding: 14px;
+}
+
+h2 {
+  color: #333333;
+  font-size: 1.5rem;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.main-baixo {
+  padding: 50px 0 60px 0;
+  flex-wrap: wrap;
+  width: auto;
+}
+
+.main-baixo ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px;
+}
+
+.main-baixo ul li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #F5F5F5;
+  width: 330px;
+  padding: 7px;
+}
+
+.main-baixo ul li img {
+  width: 20px;
+  height: 20px;
+}
+
+.main-baixo ul li h3 {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.main-funcionalidades {
+  padding-bottom: 70px;
+}
+
+.main-funcionalidades ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.main-funcionalidades li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 330px;
+}
+
+.main-funcionalidades li img {
+  width: 100px;
+  height: 100px;
+}
+
+.main-funcionalidades li p {
+  margin-top: 5px;
+  color: #666666;
+  line-height: 1.8;
+}
